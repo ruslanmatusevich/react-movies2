@@ -17,6 +17,10 @@ export class Main extends React.Component {
             .then((data) =>
                 this.setState({ movies: data.Search, loading: false })
             )
+            .catch((er) => {
+                console.error(er);
+                this.setState({loading: false})
+            })
     }
 
     searchMovies = (str, type = 'all') => {
@@ -30,6 +34,10 @@ export class Main extends React.Component {
             .then((data) =>
                 this.setState({ movies: data.Search, loading: false })
             )
+            .catch((er) => {
+                console.error(er);
+                this.setState({loading: false})
+            })
     }
     render() {
         const { movies, loading } = this.state
